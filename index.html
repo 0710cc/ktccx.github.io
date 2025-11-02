@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="xuehua.css">
+    <style type="text/css">
+        .ti{
+            text-align: center;
+            color: rgb(44, 200, 239);
+            margin-top: 150px;
+            font-size: 45px;
+            text-shadow: 10px 10px 10px #0a3345;
+        }
+        body{
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .nav{
+            margin-top: 170px;
+            text-align: center;
+            font-size: 90px;
+        }
+
+        /* 统一链接框大小并居中排列 */
+        .vv{
+            display: flex;
+            justify-content: center; 
+            gap: 80px;               
+            flex-wrap: wrap;         
+        }
+
+        .vv a{
+            box-sizing: border-box;          /* 包含边框与内边距到宽高 */
+            display: inline-flex;
+            align-items: center;     
+            width: 300px;                    /* 固定宽度（可按需调整） */
+            height: 200px;                   /* 固定高度（可按需调整） */
+            padding: 0 100px;                 /* 文字左右内边距 */
+            text-decoration: none;         /* 去掉下划线 */
+            color: #fff;        
+            font-size: 25px;                 /* 文字大小 */
+            background: linear-gradient(180deg, rgba(43, 158, 190, 0.95), rgba(227, 11, 255, 0.7));
+            border-radius: 20px;   
+            border: 1px solid rgba(255,255,255,0.6);      /* 边框 */
+            box-shadow:    /*阴影*/
+                0 18px 30px rgba(0,0,0,0.35),
+                0 2px 0 rgba(0, 0, 0, 0.08),
+                inset 0 4px 8px rgba(255,255,255,0.06),
+                inset 0 -6px 10px rgba(0,0,0,0.20);
+            position: relative; 
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            font-weight: 400;
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .vv a:hover{
+            transform: translateY(-50px);
+            background-image: url(./images/3.jpg);
+            background-repeat: no-repeat;                
+            background-size: 105% auto; /* 横向放大到 105%，按需调整 */
+            background-position: center top; 
+        }
+        .vv a span.label{
+            position: relative;
+            z-index: 3; /* 背景伪元素在其下面 */
+            pointer-events: none; /* 不阻挡鼠标事件 */
+            display: inline-block;
+            border-radius: 10px;
+            background: transparent;
+            /* 微调：垂直向下移动一点，使文字视觉上更居中 */
+            transform: translateY(30px);                
+        }
+
+
+       
+
+        .vv a::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10%; /* 放在文字上方 */
+            width: 30%;
+            height: 30%;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+            backdrop-filter: blur(6px) saturate(120%);
+            -webkit-backdrop-filter: blur(6px) saturate(120%);
+            pointer-events: none;
+            z-index: 1;
+            transition: transform 0.22s cubic-bezier(.2,.9,.25,1), opacity 0.18s ease;
+            opacity: 0.9;
+        }
+
+        /* 小图标图片 */
+        .vv a img.clothes{
+            position: absolute;
+            top: 11%; /* 与 ::before 区域对齐，按需微调 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 19%; /* 根据 ::before 的 25% 宽度做一点缩小 */
+            height: 30%;
+            z-index: 2; /* 放在伪元素之上，但在文字之下 */
+            pointer-events: none; /* 不影响点击链接 */
+        }
+
+
+        .vv a:hover::before{
+            transform: translateX(-50%) translateY(-6% ) scale(1.03);
+            box-shadow: 0 28px 60px rgba(0,0,0,0.5), inset 0 6px 14px rgba(255,255,255,0.03);
+            opacity: 1;
+        }
+        .cc{
+            text-align: center;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 4px #6b2ecd;
+        }
+
+        .hr{
+            margin-top: 250px;
+            border: none;
+            height: 11px;
+            background: linear-gradient(to right, rgba(16, 102, 139, 0), rgba(83, 16, 176, 0.5), rgba(255, 255, 255, 0));
+        }
+    </style>
+</head>
+<body style="background-image: url(./images/1.png);">
+    <h3 class="ti">KTCC的幻境时空</h3>
+    <p class="cc">欢迎来到KTCC的世界</p>
+    <div class="nav">
+        <div class="vv">
+            <a href="news_system.html" alt="">
+                <img class="clothes" src="./images/8.png" alt="哈哈">
+                <span cla
